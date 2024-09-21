@@ -1,49 +1,96 @@
-import {Page} from "../util/config";
-import {motion} from "framer-motion";
+import { Page } from "../util/config";
+import { motion } from "framer-motion";
 
 export default function Slider(props) {
-
-    const additionalClasses = "text-[#A259FF]"
+    const additionalClasses = "text-[#A259FF]";
 
     function closeSlider() {
-        props.setSlider(false)
+        props.setSlider(false);
     }
 
     function setPage(page) {
-        props.setPage(page)
-        closeSlider()
+        props.setPage(page);
+        closeSlider();
     }
 
     function logout() {
-        props.setUserInfo({username: "", email: ""})
-        props.setLoggedIn(false)
-        setPage(Page.HOME_PAGE)
+        props.setUserInfo({ username: "", email: "" });
+        props.setLoggedIn(false);
+        setPage(Page.HOME_PAGE);
     }
 
     return (
-        <div className="md:hidden flex justify-center fixed w-full h-full overflow-hidden z-50">
-            <motion.div initial={{opacity: 0}} animate={{opacity: 0.8}} transition={{delay: 0.3}} onClick={closeSlider} className="right-0 w-1/3 bg-black opacity-80"></motion.div>
-            <motion.div initial={{x:200}} animate={{ x: 0 }} transition={{ duration: 0.4, type: "tween" }} className="bg-[#3b3b3b] h-full w-2/3">
+        <div className="md:hidden fixed inset-0 z-50 flex justify-center overflow-hidden">
+            {/* Background overlay */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                transition={{ delay: 0.3 }}
+                onClick={closeSlider}
+                className="absolute inset-0 bg-black opacity-80"
+            ></motion.div>
 
-                <div className="flex justify-end pr-3 pt-2">
-                    <img onClick={closeSlider} alt="" width="32px" src="https://img.icons8.com/fluency-systems-filled/48/A259FF/multiply.png"/>
+            {/* Slider Panel */}
+            <motion.div
+                initial={{ x: 200 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.4, type: "tween" }}
+                className="relative z-10 bg-[#1A1A1A] h-full w-2/3 shadow-lg"
+            >
+                {/* Close button */}
+                <div className="flex justify-end p-3">
+                    <img
+                        onClick={closeSlider}
+                        alt="Close"
+                        width="32px"
+                        src="https://img.icons8.com/fluency-systems-filled/48/A259FF/multiply.png"
+                        className="cursor-pointer hover:scale-105 transition duration-300 ease-in-out"
+                    />
                 </div>
 
-                {!props.loggedIn && <div className="flex justify-around mt-12 flex-col items-center text-white">
-                    <button onClick={() => setPage(Page.LOGIN_PAGE)} className="mb-6 transition duration-500 ease-in-out bg-[#A259FF] rounded-lg px-4 py-1 border-[#A259FF] border-2 hover:bg-transparent">Login</button>
-                    <button onClick={() => setPage(Page.SIGNUP_PAGE)} className="transition duration-500 ease-in-out bg-[#A259FF] rounded-lg px-4 py-1 border-[#A259FF] border-2 hover:bg-transparent">Sign Up</button>
-                </div>}
+                {/* Authentication options */}
+                {!props.loggedIn && (
+                    <div className="flex flex-col items-center mt-12 text-white space-y-6">
+                        <button
+                            onClick={() => setPage(Page.LOGIN_PAGE)}
+                            className="transition duration-500 ease-in-out bg-[#A259FF] rounded-lg px-5 py-2 w-2/3 border-[#A259FF] border-2 hover:bg-transparent hover:text-[#A259FF]"
+                        >
+                            Login
+                        </button>
+                        <button
+                            onClick={() => setPage(Page.SIGNUP_PAGE)}
+                            className="transition duration-500 ease-in-out bg-[#A259FF] rounded-lg px-5 py-2 w-2/3 border-[#A259FF] border-2 hover:bg-transparent hover:text-[#A259FF]"
+                        >
+                            Sign Up
+                        </button>
+                    </div>
+                )}
 
-                {props.loggedIn && <div className="flex items-center flex-col text-white mt-12">
-                    <p className={`text-2xl font-mono text-[#A259FF]`}>{props.userInfo.username}</p>
-                    <button onClick={() => logout()} className="mt-4 w-1/3 transition duration-500 ease-in-out bg-[#A259FF] rounded-lg px-4 py-1 border-[#A259FF] border-2 hover:bg-transparent">Logout</button>
-                </div>}
+                {/* Logged-in user info */}
+                {props.loggedIn && (
+                    <div className="flex flex-col items-center mt-12 text-white">
+                        <p className="text-2xl font-mono text-[#A259FF]">{props.userInfo.username}</p>
+                        <button
+                            onClick={() => logout()}
+                            className="mt-6 transition duration-500 ease-in-out bg-[#A259FF] rounded-lg px-5 py-2 w-2/3 border-[#A259FF] border-2 hover:bg-transparent hover:text-[#A259FF]"
+                        >
+                            Logout
+                        </button>
+                    </div>
+                )}
 
-                <div className="text-xl mt-12 flex flex-col font-['Work_Sans'] text-white items-center">
-                    <p onClick={() => setPage(Page.HOME_PAGE)} className={`mb-6 ${props.currentPage === Page.HOME_PAGE ? additionalClasses : ""}`}>Home</p>
-                    <p onClick={() => setPage(Page.CONTACT)} className={`${props.currentPage === Page.CONTACT ? additionalClasses : ""}`}>Contact</p>
+                {/* Navigation Links */}
+                <div className="text-xl mt-12 flex flex-col items-center font-['Work_Sans'] text-white space-y-6">
+                    <p
+                        onClick={() => setPage(Page.HOME_PAGE)}
+                        className={`cursor-pointer transition duration-300 ease-in-out hover:text-[#A259FF] ${
+                            props.currentPage === Page.HOME_PAGE ? additionalClasses : ""
+                        }`}
+                    >
+                        Home
+                    </p>
                 </div>
             </motion.div>
         </div>
-    )
+    );
 }

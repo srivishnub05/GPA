@@ -6,7 +6,6 @@ import Signup from "./components/Signup";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Loader from "./components/Items/Loader";
-import Contact from "./components/Contact";
 import Slider from "./components/Slider";
 
 function App() {
@@ -22,8 +21,6 @@ function App() {
 
     function getCurrentPage() {
         switch (page) {
-            case Page.CONTACT:
-                return <Contact setLoading={setLoading}/>
             case Page.LOGIN_PAGE:
                 return <Login setLoading={setLoading} setPage={setPage} setLoggedIn={setLoggedIn} setUserInfo={setUserInfo}/>
             case Page.SIGNUP_PAGE:
