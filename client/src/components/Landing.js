@@ -1,70 +1,80 @@
-import {faUnlock} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AttackBlock from "./Items/AttackBlock";
 
 export default function Home() {
 
     function handleKnowMore() {
-        const element = document.getElementById('home--2')
-        if (element) element.scrollIntoView({behavior: "smooth"})
+        const element = document.getElementById('home--2');
+        if (element) element.scrollIntoView({ behavior: "smooth" });
     }
 
     return (
-        <div>
-            <div className="flex-col md:flex-row flex justify-around mt-8 sm:mt-16 font-['Work_Sans']">
+        <div className="bg-[#0D0D0D] text-gray-300 font-sans min-h-screen">
+            {/* Hero Section */}
+            <div className="flex flex-col md:flex-row justify-between items-center py-16 md:py-24 px-6 md:px-20">
 
-                <div className="sm:hidden flex justify-center">
-                    <img alt="" className="rounded-[25px] w-[90%]" src="https://i.pinimg.com/736x/67/a1/a1/67a1a1b9b21505a42648010e3669076e.jpg"/>
-                </div>
-
-                {/*INFO*/}
-                <div className="text-white ml-8 mt-8">
-                    <p className="text-3xl sm:text-6xl font-bold">Discover </p>
-                    <p className="text-3xl sm:text-6xl font-bold">Graphical Password</p>
-                    <p className="text-3xl sm:text-6xl font-bold">Authentication</p>
-                    <p className="text-xl sm:text-3xl mt-6">A Novel Approach For Security </p>
-                    <p className="text-xl sm:text-3xl">And User Experience Of </p>
-                    <p className="text-xl sm:text-3xl">Graphical Password Authentication.</p>
-                    <button onClick={handleKnowMore} className="transition duration-500 ease-in-out sm:w-1/3 bg-[#A259FF] rounded-lg px-4 py-1 mt-6 sm:text-xl border-[#A259FF] border-2 hover:bg-transparent">
-                        <FontAwesomeIcon className="text-white mr-3" icon={faUnlock} />
-                        Know More
+                {/* Hero Text */}
+                <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                    <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+                        Elevate Your Security <br /> with Graphical Passwords
+                    </h1>
+                    <p className="text-lg md:text-xl text-gray-400 mb-8">
+                        Experience a secure and user-friendly approach to password authentication designed to prevent modern cyber threats.
+                    </p>
+                    <button
+                        onClick={handleKnowMore}
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md shadow-lg transition-all duration-300 ease-in-out">
+                        <FontAwesomeIcon icon={faUnlock} className="mr-2" />
+                        Learn More
                     </button>
                 </div>
-                {/*IMAGE*/}
-                <div className="hidden sm:block">
-                    <img alt="" className=" hover:scale-95 transition duration-500 ease-in-out hover:shadow-2xl hover:shadow-[#A259FF80] rounded-[25px] w-full" src="https://i.pinimg.com/736x/67/a1/a1/67a1a1b9b21505a42648010e3669076e.jpg"/>
+
+                {/* Hero Image */}
+                <div className="md:w-1/2 flex justify-center">
+                    <img
+                        alt="Graphical Password Concept"
+                        className="w-full max-w-sm rounded-lg shadow-xl hover:shadow-2xl transition-transform duration-300 hover:scale-105"
+                        src="https://www.nokia.com/sites/default/files/2022-01/cybersecurity4_0.jpg"
+                    />
                 </div>
             </div>
 
-            <div id="home--2" className="sm:mt-48 font-['Work_Sans']">
-                <div className="ml-6 sm:ml-28 pt-24">
-                    <p className="text-white text-3xl sm:text-5xl font-bold">Resistance To Attacks</p>
-                    <p className="text-white text-xl sm:text-2xl mt-3">Our System Provides Security Against Popular Attacks.</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 mt-8">
-                        <AttackBlock
-                            icon="https://img.icons8.com/ios-filled/100/A259FF/re-enter-pincode.png"
-                            title="Bruteforce"
-                            desc="After reaching max tries, the user will be notified via message through email. And the further authentication through the generic URL/website is disabled for that user account, instead, they have to use the link that will be sent by the company in the notification email. This also lets the legitimate user know about the adversary."
-                        />
-                        <AttackBlock
-                            icon="https://img.icons8.com/ios-filled/100/A259FF/show-password.png"
-                            title="Shoulder Surfing"
-                            desc="Shoulder surfing is a type of social engineering technique used to obtain information such as personal identification numbers (PINs), passwords and other confidential data by looking over the victim's shoulder. The system we adopt is similar to the Phone pattern system."
-                        />
-                        <AttackBlock
-                            icon="https://img.icons8.com/ios-filled/100/A259FF/spyware-free.png"
-                            title="Spyware"
-                            desc="Graphical password systems resist spyware more easily than regular passwords. Key-loggers secretly capture keystrokes and transfer, but if the spyware wants to track the mouse movements, it can be tracked, but the adversary wouldn’t know which part of the mouse event is actually the graphical password."
-                        />
-                        <AttackBlock
-                            icon="https://img.icons8.com/ios-filled/100/A259FF/enter-pin.png"
-                            title="Phishing"
-                            desc="Since the adversary is made to believe that the password is a set of images, it’s not possible to make a fake page, since the adversary thinks he doesn’t know the images."
-                        />
-                    </div>
+            {/* Resistance to Attacks Section */}
+            <div id="home--2" className="py-20 bg-[#1A1A1A] px-6 md:px-20">
+                <div className="text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Unmatched Security Against Attacks
+                    </h2>
+                    <p className="text-lg text-gray-400 mb-12">
+                        Our system defends against the most prevalent forms of cyberattacks. Stay protected with cutting-edge security features.
+                    </p>
+                </div>
+
+                {/* Attack Blocks */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                    <AttackBlock
+                        icon="https://img.icons8.com/ios-filled/100/A259FF/re-enter-pincode.png"
+                        title="Bruteforce Defense"
+                        desc="Automatically lock accounts after multiple failed attempts and notify users via email. Access can only be restored through a secure link sent by the system."
+                    />
+                    <AttackBlock
+                        icon="https://img.icons8.com/ios-filled/100/A259FF/show-password.png"
+                        title="Shoulder Surfing Protection"
+                        desc="Our graphical system helps prevent unauthorized access attempts even if someone is watching over your shoulder."
+                    />
+                    <AttackBlock
+                        icon="https://img.icons8.com/ios-filled/100/A259FF/spyware-free.png"
+                        title="Spyware Resistance"
+                        desc="Graphical passwords are harder for spyware to capture compared to traditional key-based passwords, adding an extra layer of security."
+                    />
+                    <AttackBlock
+                        icon="https://img.icons8.com/ios-filled/100/A259FF/enter-pin.png"
+                        title="Phishing Immunity"
+                        desc="By using unique graphical elements, our system resists phishing attempts, as attackers can't replicate the authentication process."
+                    />
                 </div>
             </div>
-            {/* <Digest/> */}
         </div>
-    )
+    );
 }
