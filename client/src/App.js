@@ -3,10 +3,8 @@ import {useState} from "react";
 import {Page} from "./util/config";
 import Home from "./components/Landing";
 import Signup from "./components/Signup";
-import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Loader from "./components/Items/Loader";
-import Contact from "./components/Contact";
 import Slider from "./components/Slider";
 
 function App() {
@@ -22,8 +20,6 @@ function App() {
 
     function getCurrentPage() {
         switch (page) {
-            case Page.CONTACT:
-                return <Contact setLoading={setLoading}/>
             case Page.LOGIN_PAGE:
                 return <Login setLoading={setLoading} setPage={setPage} setLoggedIn={setLoggedIn} setUserInfo={setUserInfo}/>
             case Page.SIGNUP_PAGE:
@@ -41,7 +37,7 @@ function App() {
                 {slider && <Slider currentPage={page} setLoggedIn={setLoggedIn} setUserInfo={setUserInfo} setPage={setPage} loggedIn={loggedIn} userInfo={userInfo} slider={slider} setSlider={setSlider}/>}
                 <Navbar setSlider={setSlider} setUserInfo={setUserInfo} setPage={setPage} currentPage={page} setLoggedIn={setLoggedIn} loggedIn={loggedIn} userInfo={userInfo}/>
                 {getCurrentPage()}
-                <Footer setPage={setPage}/>
+                {/* <Footer setPage={setPage}/> */}
             </div>
         </div>
 

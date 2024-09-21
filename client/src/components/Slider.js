@@ -40,8 +40,8 @@ export default function Slider(props) {
                 </div>}
 
                 <div className="text-xl mt-12 flex flex-col font-['Work_Sans'] text-white items-center">
-                    <p onClick={() => setPage(Page.HOME_PAGE)} className={`mb-6 ${props.currentPage === Page.HOME_PAGE ? additionalClasses : ""}`}>Home</p>
-                    <p onClick={() => setPage(Page.CONTACT)} className={`${props.currentPage === Page.CONTACT ? additionalClasses : ""}`}>Contact</p>
+                    {/* <p onClick={() => setPage(Page.HOME_PAGE)} className={`mb-6 ${props.currentPage === Page.HOME_PAGE ? additionalClasses : ""}`}>Home</p> */}
+                    {/* <p onClick={() => setPage(Page.CONTACT)} className={`${props.currentPage === Page.CONTACT ? additionalClasses : ""}`}>Contact</p> */}
                 </div>
             </motion.div>
         </div>

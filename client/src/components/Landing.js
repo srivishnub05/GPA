@@ -1,7 +1,6 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import AttackBlock from "./Items/AttackBlock";
-import Digest from "./Digest";
 
 export default function Home() {
 
