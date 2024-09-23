@@ -41,37 +41,37 @@ export default function Home() {
             </div>
 
             {/* Resistance to Attacks Section */}
-            <div id="home--2" className="py-20 bg-[#1A1A1A] px-6 md:px-20">
+            <div id="home--2" className="py-20 bg-[#0D0D0D] px-6 md:px-20">
                 <div className="text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Unmatched Security Against Attacks
+                        Unbreakable Security
                     </h2>
                     <p className="text-lg text-gray-400 mb-12">
-                        Our system defends against the most prevalent forms of cyberattacks. Stay protected with cutting-edge security features.
+                        Our graphical password system is designed to withstand even the most sophisticated attacks. Stay safe with our cutting-edge security features.
                     </p>
                 </div>
 
                 {/* Attack Blocks */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                     <AttackBlock
-                        icon="https://img.icons8.com/ios-filled/100/A259FF/re-enter-pincode.png"
-                        title="Bruteforce Defense"
-                        desc="Automatically lock accounts after multiple failed attempts and notify users via email. Access can only be restored through a secure link sent by the system."
+                        icon="https://img.icons8.com/ios-filled/100/00C853/shield-with-tick.png"
+                        title="Impenetrable Defense"
+                        desc="Our system automatically locks accounts after multiple failed attempts and sends a secure link to restore access, ensuring your data is always protected."
                     />
                     <AttackBlock
-                        icon="https://img.icons8.com/ios-filled/100/A259FF/show-password.png"
-                        title="Shoulder Surfing Protection"
-                        desc="Our graphical system helps prevent unauthorized access attempts even if someone is watching over your shoulder."
+                        icon="https://img.icons8.com/ios-filled/100/00C853/eye-protection.png"
+                        title="Shoulder Surfing Immunity"
+                        desc="With our unique graphical password approach, even if someone is watching, they won't be able to gain unauthorized access to your account."
                     />
                     <AttackBlock
-                        icon="https://img.icons8.com/ios-filled/100/A259FF/spyware-free.png"
-                        title="Spyware Resistance"
-                        desc="Graphical passwords are harder for spyware to capture compared to traditional key-based passwords, adding an extra layer of security."
+                        icon="https://img.icons8.com/ios-filled/100/00C853/spy-shield.png"
+                        title="Spyware Proof"
+                        desc="Graphical passwords are virtually impossible for spyware to capture, providing an extra layer of security that traditional passwords can't match."
                     />
                     <AttackBlock
-                        icon="https://img.icons8.com/ios-filled/100/A259FF/enter-pin.png"
-                        title="Phishing Immunity"
-                        desc="By using unique graphical elements, our system resists phishing attempts, as attackers can't replicate the authentication process."
+                        icon="https://img.icons8.com/ios-filled/100/00C853/shield-with-lightning.png"
+                        title="Phishing Fortress"
+                        desc="Our system's use of unique graphical elements makes it immune to phishing attempts, as attackers can never replicate the authentication process."
                     />
                 </div>
             </div>

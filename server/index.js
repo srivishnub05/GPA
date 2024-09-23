@@ -7,8 +7,8 @@ import mongoose from 'mongoose'
 import swaggerUi from 'swagger-ui-express'
 import fs from 'fs/promises'
 import { VerifyRoute } from './routes/verify.js'
-import { DigestRoutes } from './routes/digest.js'
-import { router as contactRoutes } from './routes/contact.js'
+
+
 import { router as imageRoutes } from './routes/image.js'
 import { router as userRoutes } from './routes/users.js'
 
@@ -28,8 +28,8 @@ app.use('/api/verify', VerifyRoute)
 app.use('/api/user/', userRoutes)
 app.use('/api/image/', imageRoutes)
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-app.use('/api/contact', contactRoutes)
-app.use('/api/digest', DigestRoutes)
+
+
 
 mongoose.set('strictQuery', true)
 mongoose

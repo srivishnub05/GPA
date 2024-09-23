@@ -7,4 +7,4 @@ const router = express.Router()
 router.get('/search', imageSearch)
 router.get('/', getByUser)
 
-export { router }
+export { router }   
